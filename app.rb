@@ -1,7 +1,7 @@
+require 'sinatra'
 require 'date'
 require 'fileutils'
 require 'digest'
-require 'sinatra'
 require 'jekyll'
 
 def post_html(post_title, post_content)
@@ -46,8 +46,8 @@ def post_html(post_title, post_content)
   # Get HTML contents
   compiled_post_contents = File.read(compiled_post_path)
   
-  # Delete directory
-  FileUtils.rm_rf(destination_dir)
+  # # Delete directory
+  # FileUtils.rm_rf(destination_dir)
   
   # Return post HTML contents
   compiled_post_contents
