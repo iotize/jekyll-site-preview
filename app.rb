@@ -62,7 +62,7 @@ def post_html(post_title, post_content)
   end
 
   # Figure out the compiled post path
-  compiled_post_path = File.join(build_dir, post_title) + '.html'
+  compiled_post_path = File.join(build_dir, post_title.downcase) + '.html'
   
   puts "compiled post path: #{compiled_post_path}"
 
