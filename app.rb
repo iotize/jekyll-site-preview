@@ -58,10 +58,7 @@ get '/' do
 end
 
 get '/test' do
-   myfile = File.new("./tmp/testemp.txt", "w+")
-   myfile.puts("Abracadabra")
-   myfile.close
-   "End of test"
+  post_html 'My First Post', 'Hello world!'
 end
 
 post '/build' do
