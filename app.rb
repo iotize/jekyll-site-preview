@@ -57,6 +57,13 @@ get '/' do
   "Hello."
 end
 
+get '/test' do
+   myfile = File.new("./tmp/testemp.txt", "w+")
+   myfile.puts("Abracadabra")
+   myfile.close
+   "End of test"
+end
+
 post '/build' do
   post_html params[:title], params[:content]
 end
