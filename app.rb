@@ -9,7 +9,7 @@ def post_html(post_title, post_content)
   hash = Digest::SHA1.hexdigest(post_content)
 
   # Calculate directory paths
-  temp_dir = "tmp"
+  temp_dir = File.join(settings.root, 'tmp')
   destination_dir = File.join(temp_dir, hash)
   site_dir = File.join(destination_dir, 'site')
   posts_dir = File.join(site_dir, '_posts')
