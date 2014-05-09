@@ -53,6 +53,10 @@ def post_html(post_title, post_content)
   compiled_post_contents
 end
 
+get '/' do
+  "Hello."
+end
+
 post '/build' do
   post_html params[:title], params[:content]
 end
