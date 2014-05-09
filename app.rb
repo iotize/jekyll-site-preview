@@ -55,6 +55,11 @@ def post_html(post_title, post_content)
   options = Jekyll::configuration({ 'source' => site_dir, 'destination' => build_dir, safe: true })
   site = Jekyll::Site.new(options)
   site.process
+  
+  logger.debug("All files:")
+  Dir.glob("**/*") do |path|
+    logger.debug(path)
+  end
 
   # Figure out the compiled post path
   compiled_post_path = File.join(build_dir, post_title) + '.html'
